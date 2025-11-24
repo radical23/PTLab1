@@ -9,21 +9,21 @@ class TestTextDataReader:
     @pytest.fixture()
     def file_and_data_content(self) -> tuple[str, DataType]:
         text = (
-        "Иванов Константин Дмитриевич\n"
-        "математика:91\n"
-        "химия:100\n"
-        "Петров Петр Семенович\n"
-        "русский язык:87\n"
-        "литература:78\n"
+            "Иванов Константин Дмитриевич\n"
+            "математика:91\n"
+            "химия:100\n"
+            "Петров Петр Семенович\n"
+            "русский язык:87\n"
+            "литература:78\n"
     )
 
         data = {
-        "Иванов Константин Дмитриевич": [
-            ("математика", 91), ("химия", 100)
-        ],
-        "Петров Петр Семенович": [
-            ("русский язык", 87), ("литература", 78)
-        ]
+            "Иванов Константин Дмитриевич": [
+                ("математика", 91), ("химия", 100)
+            ],
+            "Петров Петр Семенович": [
+                ("русский язык", 87), ("литература", 78)
+            ]
         }
         return text, data
 
@@ -38,3 +38,4 @@ class TestTextDataReader:
     def test_read(self, filepath_and_data: tuple[str, DataType]) -> None:
         file_content = TextDataReader().read(filepath_and_data[0])
         assert file_content == filepath_and_data[1]
+        
