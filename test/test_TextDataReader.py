@@ -15,7 +15,7 @@ class TestTextDataReader:
             "Петров Петр Семенович\n"
             "русский язык:87\n"
             "литература:78\n"
-    )
+        )
 
         data = {
             "Иванов Константин Дмитриевич": [
@@ -38,4 +38,4 @@ class TestTextDataReader:
     def test_read(self, filepath_and_data: tuple[str, DataType]) -> None:
         file_content = TextDataReader().read(filepath_and_data[0])
         assert file_content == filepath_and_data[1]
-        
+  
